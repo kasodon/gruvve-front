@@ -1,0 +1,22 @@
+.members {
+    height: max-content;
+    width: 87.4%;
+    margin: 5rem 0;
+    background: #191D29;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5rem;
+    .member-box {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #000000;
+        border-radius: 10px;
+        padding: 1rem 1.5rem;
+        .name {}
+    }
+}

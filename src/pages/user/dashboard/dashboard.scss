@@ -1,0 +1,77 @@
+.dashboard {
+    height: max-content;
+    width: 87.4%;
+    margin: 5rem 0;
+    background: #191D29;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5rem;
+    h2 {
+        margin-bottom: 5rem;
+    }
+    .content-box {
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        .box {
+            width: 25%;
+            background: #14E956;
+            border-radius: 10px;
+            box-shadow: 0px 0px 16px 7px rgba(0,0,0,0.75);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.3rem 2rem;
+            .icon{
+                background: #222222;
+                border-radius: 50%;
+                width: 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1.5rem 0;
+            }
+            .text{
+                justify-self: flex-start;
+                h3 {
+                    font-weight: 700;
+                    font-size: 50px;
+                    color: #444444;
+                    margin: 0;
+                }
+                p {
+                    margin: 0;
+                    font-weight: 900;
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    color:blanchedalmond;
+                }
+            }
+        }
+    }
+    .idea {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5rem;
+        text-align: center;
+        align-self: center;
+        font-weight: 900;
+        button {
+            background: #14E956;
+            color: #050810;
+            border: none;
+            border-radius: 5px;
+            padding: 1.2rem 2.1rem;
+            font-weight: 900;
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+    }
+}

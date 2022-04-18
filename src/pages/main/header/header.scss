@@ -41,8 +41,9 @@ background: linear-gradient(3deg, rgba(255,255,255,0.03827468487394958) 40%, rgb
         padding-right: 1.5rem;
         display: flex;
         justify-content: flex-end;
-        button {
+        .btn {
             background: #14E956;
+            text-decoration: none;
             color: #050810;
             border: none;
             border-radius: 5px;

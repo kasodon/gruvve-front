@@ -10,7 +10,7 @@ const Projects = React.lazy(
 )
 
 var userRoutes = [
-    { path: 'dashboard', name: 'Dashboard', component: <Dashboard /> },
+    { path: '', name: 'Dashboard', component: <Dashboard /> },
     {
         path: 'members',
         name: 'Members',

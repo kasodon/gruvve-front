@@ -1,4 +1,5 @@
 import './header.scss'
+import { Outlet, Link } from "react-router-dom";
 
 function Header() {
     return (
@@ -21,7 +22,7 @@ function Header() {
                     </ul>
             </div>
             <div className="action-btn">
-                <button>Login</button>
+                <Link to="/login" className="btn">Login</Link>
             </div>
         </div>
     )

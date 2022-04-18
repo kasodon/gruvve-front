@@ -25,7 +25,7 @@ function UserLayout() {
                     })}
                 </Routes>
             </React.Suspense>
-            <Sidebar />
+            {/* <Sidebar /> */}
             <Footer />
         </div>
     )

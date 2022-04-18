@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from "react-dom";
+import { useNavigate } from 'react-router';
 import axios from "axios";
 
 import './join.scss';
@@ -11,47 +12,28 @@ function Join() {
     const [role, setRole] = useState("developer");
     const [password, setPassword] = useState("");
     const [confirm_password, setConfirmPassword] = useState("");
-    const [post, setPost] = useState(null);
 
-    // const newUser = ()  => {
-    //     console.log("htmlForm data:", {
-    //        name,
-    //        username,
-    //        email,
-    //        role,
-    //        password,
-    //        confirm_password
-    //     })
-    //     axios.post(baseURL, {
-    //         name,
-    //         username,
-    //         email,
-    //         role,
-    //         password,
-    //         confirm_password
-    //   })
-    //   .then((response) => {
-    //     setPost(response.data);
-    //     console.log("returned data:", post);
-    //   });
-    // }
+    let navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const user = {
-            name: name,
-            username: username,
-            email: email,
-            role: role,
-            password: password,
-            confirm_password: confirm_password
-        };
-         axios.post('http://localhost:4200/users/register', {user})
+        // const user = {
+            
+        // };
+         axios.post('https://guvve-backend.herokuapp.com/users/register', {
+          name,
+          username,
+          email,
+          role,
+          password,
+          confirm_password
+         })
          .then((res) => {
-        setPost(res.data);
-        console.log("returned data:", post);
+          console.log(res);
+           const data = res.data;
+           console.log(data);
+            navigate("/user");
       }).catch(error => {
-        console.log(error.response)
     });
       }
 
@@ -80,7 +62,7 @@ function Join() {
             autoFocus
             name="fullName"
             required
-            onChange = {e => setName({name: e.target.value})}
+            onChange = {e => setName(e.target.value)}
           />
       </div>
       <div className="row">
@@ -91,7 +73,7 @@ function Join() {
             type="text"
             name="userName"
             required
-            onChange = {e => setUsername({username: e.target.value})}
+            onChange = {e => setUsername(e.target.value)}
           />
       </div>
       <div className="row">
@@ -102,14 +84,14 @@ function Join() {
             type="email"
             name="email"
             required
-            onChange ={e => setEmail({email: e.target.value})}
+            onChange ={e => setEmail(e.target.value)}
           />
       </div>
       <div className="row">
       <label htmlFor="role">
           Choose Role
           </label>
-          <select name="role" required onChange ={e => setRole({role: e.target.value})}>
+          <select name="role" required onChange ={e => setRole(e.target.value)}>
             <option value="developer">Developer</option>
             <option value="marketer">Marketer</option>
             <option value="biz_analyst">Biz Analyst</option>
@@ -125,7 +107,7 @@ function Join() {
             type="password"
             name="password"
             required
-            onChange = {e => setPassword({password: e.target.value})}
+            onChange = {e => setPassword(e.target.value)}
           />
       </div>
       <div className="row">
@@ -136,7 +118,7 @@ function Join() {
             type="password"
             name="confirm_password"
             required
-            onChange = {e => setConfirmPassword({confirm_password: e.target.value})}
+            onChange = {e => setConfirmPassword(e.target.value)}
           />
       </div>
       <input type="submit" />

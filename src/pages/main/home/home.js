@@ -1,4 +1,5 @@
 import './home.scss'
+import { Outlet, Link } from "react-router-dom";
 
 function Home() {
     return (
@@ -7,7 +8,7 @@ function Home() {
                 <div className="powered"><p>powered by $GRUV</p></div>
                 <div className="prime-text"><h1>Web3 <span>startup accelerator</span>, both in finance and human resource<span>.</span></h1></div>
                 <div className="sec-text"><h3>We're looking for web3 contributors who want to make an impact in the web3 space</h3></div>
-                <button>Join DAO</button>
+                <Link to="/join" className="btn">Join DAO</Link>
             </div>
             <div className="illustration">
             <svg viewBox="0 0 536 470" fill="none" xmlns="http://www.w3.org/2000/svg">
