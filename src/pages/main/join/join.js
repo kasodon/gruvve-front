@@ -13,13 +13,12 @@ function Join() {
     const [password, setPassword] = useState("");
     const [confirm_password, setConfirmPassword] = useState("");
 
+    const [data, setData] = useState();
+
     let navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // const user = {
-            
-        // };
          axios.post('https://guvve-backend.herokuapp.com/users/register', {
           name,
           username,
@@ -30,7 +29,8 @@ function Join() {
          })
          .then((res) => {
           console.log(res);
-           const data = res.data;
+          //  const data = res.data;
+           setData(res.data);
            console.log(data);
             navigate("/user");
       }).catch(error => {

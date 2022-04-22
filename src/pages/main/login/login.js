@@ -6,25 +6,30 @@ import './login.scss'
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [data, setData] = useState();
 
   let navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const user = {
-        
-    // };
      axios.post('https://guvve-backend.herokuapp.com/users/login', {
       username,
       password
      })
      .then((res) => {
       console.log(res);
-       const data = res.data;
-       console.log(data);
-        navigate("/user");
+       setData(res.data)
+       console.log("data:", data);
+       if (data.success == true) {
+        navigate("/user")
+       } else if (data.success == false) {
+         alert('Login unsuccessful, please try again')
+         navigate("/")
+       } else {
+          navigate("/")
+       }
   }).catch(error => {
-});
+})
   }
 
     return (
@@ -32,11 +37,11 @@ function Login() {
             <div className="logo"><span><i>GRUVVE</i></span></div>
             <h4>Please login to access your DAO membership account</h4>
             <form onSubmit={handleSubmit}>
-  <label for="username">
+  <label htmlFor="username">
     Username:
     </label>
     <input type="text" name="username" onChange = {e => setUsername(e.target.value)} />
-  <label for="password">
+  <label htmlFor="password">
     Password:
     </label>
     <input type="password" name="password" onChange = {e => setPassword(e.target.value)} />
